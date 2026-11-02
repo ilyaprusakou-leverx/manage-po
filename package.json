@@ -1,0 +1,32 @@
+{
+  "name": "po-mcp",
+  "version": "1.0.0",
+  "description": "CAP MCP server wrapping the SAP Purchase Order OData V4 service (ZPRU_PURCORDERHDR_ODATA)",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "cds-serve",
+    "dev":   "cds watch"
+  },
+  "dependencies": {
+    "@sap/cds": ">=8.7",
+    "@cap-js/mcp": ">=1.4",
+    "axios": "^1.7.2",
+    "dotenv": "^16",
+    "express": "^5"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": ">=8.7"
+  },
+  "overrides": {
+    "qs": ">=6.16.0"
+  },
+  "cds": {
+    "requires": {
+      "auth": { "kind": "dummy" }
+    },
+    "mcp": {
+      "per_action_tool": true,
+      "prefix": false
+    }
+  }
+}
